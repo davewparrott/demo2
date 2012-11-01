@@ -1,0 +1,14 @@
+<h1>Editing photo</h1>
+
+<%= render 'form' %>
+
+<div style="width:340px; border:1px solid black;">
+<img src="/product_img/<%= @photo.filename %>" width="300px" alt="<%= @photo.alttxt %>" title="<%= @photo.alttxt %>" />
+<br />
+<%= @photo.caption %>
+</div>
+<br/>
+Product: <%= Product.find(@photo.product_id) != nil ? Product.find(@photo.product_id).title : "(none)" %><br><br>
+
+<%= link_to 'Show', @photo %> |
+<%= link_to 'Back', photos_path %>

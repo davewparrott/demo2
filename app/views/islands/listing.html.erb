@@ -1,0 +1,35 @@
+<% if @islands != nil && @islands.count > 0 %>
+	<h2>All islands</h2>
+	<table class="listing_table">
+	<tr>
+		<th><a href="?sort=<%= params[:sort]=='n' ? 'N' : 'n' %>">Name</a>
+			<% if params[:sort] != nil && params[:sort].downcase == 'n' %>
+				<span class="sorting_arrow">
+				<img src="/img/<%= params[:sort] == 'n' ? 'sorting_arrow_down' : 'sorting_arrow_up' %>.gif" />
+				</span>
+			<% end %>
+		</th>
+		<th></th>
+		<th><a href="?sort=<%= params[:sort]=='s' ? 'S' : 's' %>">Summary</a>
+			<% if params[:sort] != nil && params[:sort].downcase == 's' %>
+				<span class="sorting_arrow">
+				<img src="/img/<%= params[:sort] == 's' ? 'sorting_arrow_down' : 'sorting_arrow_up' %>.gif" />
+				</span>
+			<% end %>
+		</th>
+		<th><a href="?sort=<%= params[:sort]=='p' ? 'P' : 'p' %>">Price</a>
+			<% if params[:sort] != nil && params[:sort].downcase == 'p' %>
+				<span class="sorting_arrow">
+				<img src="/img/<%= params[:sort] == 'p' ? 'sorting_arrow_down' : 'sorting_arrow_up' %>.gif" />
+				</span>
+			<% end %>
+		</th>
+	</tr>
+	<% counter = 0 %>
+	<% @islands.each do |i| %>
+		<%= render 'listing_item', :island => i, :counter => counter %>
+		<% counter = counter + 1 %>
+	<% end %>
+	</table>
+<% end %>
+

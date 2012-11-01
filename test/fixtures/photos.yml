@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  alttxt: MyString
+  filename: MyString
+  product_id: 1
+  active: false
+  order: 1
+
+two:
+  alttxt: MyString
+  filename: MyString
+  product_id: 1
+  active: false
+  order: 1

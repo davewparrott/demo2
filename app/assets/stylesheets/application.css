@@ -1,0 +1,136 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+body
+{
+    font-family:arial;
+    font-size:12px;
+}
+
+td
+{
+    vertical-align:top;
+}
+img.title_photo
+{
+    height: 100px;
+}
+table.icon_item td.photo
+{
+    width:100px;
+}
+
+table.icon_item
+{
+    width:260px;
+    margin:10px;
+    border:1px dotted #999;
+    border-top:0px;
+    border-left:0px;
+}
+table.icon_item td
+{
+    vertical-align:top;
+}
+p.title a
+{
+    font-size:12px;
+}
+table.icon_item .title
+{
+    font-weight:bold;
+}
+table.icon_item .price
+{
+    font-weight:normal;
+}
+table.icon_item .summary
+{
+    font-style:italic;
+}
+table.icon_item p { margin-top:0px;padding-top:0px;margin-left:6px; }
+
+td.grid_item
+{
+    vertical-align:top;
+    border:0px solid #999;
+    text-align:left;
+}
+
+td.leftNav
+{
+    padding-right:10px;
+    border-right:1px dotted #999;
+    width:100px;
+}
+td.mainWindow
+{
+    padding-left:10px;
+}
+td.footer
+{
+    text-align:center;
+    font-style:italic;
+    padding-top:20px;
+}
+table.pageTable
+{
+    margin-left:auto;
+    margin-right:auto;
+    width:1000px;
+}
+
+a:link, a:hover, a:visited, a:active
+{
+    color:#333;
+    background-color:transparent;
+    text-decoration:none;
+}
+a:hover
+{
+    text-decoration:underline;
+}
+h1 a:hover
+{
+    text-decoration:none;
+}
+
+table.listing_table {}
+table.listing_table th {text-align:left;border-bottom:1px dotted #999;}
+table.listing_table td {padding:5px;}
+table.listing_table td.photo img {width:200px;height:auto;}
+table.listing_table td.title {width:100px;}
+table.listing_table td.summary {}
+table.listing_table td.price {}
+table.listing_table span.sorting_arrow img {position:relative;top:-2px;margin-left:10px;}
+
+tr.row_a { background-color:#eee; }
+
+div.summary_text, div.details_text, div.stats_text {margin-bottom:20px;}
+div.stats_text p { margin-top:0px;margin-bottom:0px;padding-top:0px;padding-bottom:0px; }
+div.stats_text p label { font-weight:bold; }
+
+table.island_detail td.photos
+{
+    border-left:1px dotted #999;
+    padding-left:20px;
+}
+table.island_detail td.main_section
+{
+    padding-right:20px;
+}
+table.island_detail td.photos div.photo
+{
+    margin-bottom:20px;
+    text-align:center;
+}

@@ -1,0 +1,13 @@
+<% summary_limit = 200 %>
+<% if island != nil %>
+<tr class="row_<%= counter % 2 == 0 ? 'a' : 'b' %>">
+	<td class="title"><a href="/islands/<%= island.id %>"><%=island.title%></a></td>
+	<td class="photo">
+		<% if island.title_photo != nil && island.title_photo.length > 0 %>
+			<a href="/islands/<%= island.id %>"><img src="/product_img/<%= island.title_photo %>" class="title_photo" /></a>
+		<% end %>
+	</td>
+	<td class="summary"><%= island.short_summary(summary_limit) %><%= island.summary.length > summary_limit ? " ... " : "" %></td>
+	<td class="price"><%= number_to_currency(island.price, :unit=>'$') %></td>
+</tr>
+<% end %>

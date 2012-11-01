@@ -1,0 +1,41 @@
+<h1>Check out these islands!</h1>
+
+<% row_limit = 3 %>
+
+<% if @featured.count > 0 %>
+	<% grid_counter = 0 %>
+	<h2>Featured</h2>
+	<table class="grid_table">
+	<% @featured.each do |i| %>
+		<% if grid_counter % row_limit == 0 %>
+			<tr>
+		<% end %>
+		<td class="grid_item"><%= render 'icon_item', :island => i %></td>
+		<% if (grid_counter + 1) % row_limit == 0 %>
+			</tr>
+		<% end %>
+		<% grid_counter = grid_counter + 1 %>
+	<% end %>
+	</table>
+<% end %>
+
+<% if @islands.count > 0 %>
+	<% grid_counter = 0 %>
+	<h2>Other Islands for Sale</h2>
+	<table class="grid_table">
+	<% @islands.each do |i| %>
+		<% if grid_counter % row_limit == 0 %>
+			<tr>
+		<% end %>
+		<td class="grid_item"><%= render 'icon_item', :island => i %></td>
+		<% if (grid_counter + 1) % row_limit == 0 %>
+			</tr>
+		<% end %>
+		<% grid_counter = grid_counter + 1 %>
+	<% end %>
+	</table>
+<% end %>
+
+<p><%= link_to "Products", islands_path %>!</p>
+<p><%= link_to "Photos", photos_path %></p>
+

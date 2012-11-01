@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Alttxt:</b>
+  <%= @photo.alttxt %>
+</p>
+
+<p>
+  <b>Filename:</b>
+  <%= @photo.filename %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <%= @photo.product_id %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @photo.active %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%= @photo.order %>
+</p>
+
+<p>
+  <b>Caption:</b>
+  <%= @photo.caption %>
+</p>
+
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

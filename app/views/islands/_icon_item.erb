@@ -1,0 +1,19 @@
+<% summary_limit = 100 %>
+<% has_photo = island.title_photo != nil && island.title_photo.length > 0 %>
+<table class="icon_item">
+<tr>
+	<% if has_photo %>
+		<td class="photo"><a href="/islands/<%= island.id %>"><img src="/product_img/<%= island.title_photo %>" class="title_photo" /></a></td>
+	<% end %>
+	<td style="vertical-align:top;">
+		<p class="title"><a href="/islands/<%= island.id %>"><%= island.title %></a></p>
+		<p class="price"><%= number_to_currency(island.price, :unit => '$') %><p>
+	<% if has_photo %>
+		</td>
+		<tr>
+		<td colspan="2">
+	<% end %>
+		<p class="summary"><%= island.short_summary(summary_limit) %><%= island.summary.length > summary_limit ? " ... " : "" %></p>
+	</td>
+</tr>
+</table>

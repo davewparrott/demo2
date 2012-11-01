@@ -1,0 +1,42 @@
+<table class="island_detail"><tr>
+<td class="main_section">
+<h2><%= @island.title %></h2>
+
+<div class="stats_text">
+	<p><label>Price:</label> <%= number_to_currency(@island.price, :unit=>'$') %></p>
+	<p><label>Stock:</label> only <%= @island.stock %> left!</p>
+</div>
+
+<% if @island.summary != nil && @island.summary.length > 0 %>
+<div class="summary_text">
+	<%= @island.summary %>
+</div>
+<% end %>
+
+<% if @island.details != nil && @island.details.length > 0 %>
+<h3>Details</h3>
+<div class="details_text">
+	<%= raw(@island.details) %>
+</div>
+<% end %>
+</td>
+
+<% if @island.photos != nil && @island.photos.count > 0 %>
+	<td class="photos">
+	
+	<% @island.photos.each do |photo| %>
+		<% if photo.active %>
+			<div class="photo">
+				<img src="/product_img/<%= photo.filename %>" alt="<%= photo.alttxt %>" title="<%= photo.alttxt %>" width="300px" />
+				<% if photo.caption != nil && photo.caption.length > 0 %>
+					<br />
+					<%= photo.caption %>
+				<% end %>
+			</div>
+		<% end %>
+	<% end %>
+	
+	</td>
+<% end %>
+
+</table>

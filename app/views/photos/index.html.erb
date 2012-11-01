@@ -1,0 +1,35 @@
+<h1>Listing photos</h1>
+
+<table>
+  <tr>
+    <th>Alttxt</th>
+    <th>Filename</th>
+    <th>Product</th>
+    <th>Active</th>
+    <th>Order</th>
+    <th>Caption</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% counter = 0 %>
+<% @photos.each do |photo| %>
+  <tr class="row_<%= counter % 2 == 1 ? 'a' : 'b' %>">
+    <td><%= photo.alttxt %></td>
+    <td><%= photo.filename %></td>
+    <td><%= photo.product_id %></td>
+    <td><%= photo.active %></td>
+    <td><%= photo.order %></td>
+    <td><%= photo.caption %></td>
+    <td><%= link_to 'Show', photo %></td>
+    <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
+    <td><%= link_to 'Destroy', photo, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
+  </tr>
+  <% counter = counter + 1 %>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Photo', new_photo_path %>

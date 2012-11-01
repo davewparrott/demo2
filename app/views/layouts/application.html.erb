@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+<table class="pageTable">
+<tr>
+<td colspan="2" style="height:100px;">
+<h1><a href="/">Dave's Totally Awesome Islands for Sale</a></h1>
+<b>Check out these totally rad islands!!!</b>
+</td>
+</tr>
+<tr>
+<td class="leftNav">
+	<p><a href="/">Home</a></p>
+	<p><a href="/islands">Islands</a></p>
+	<p><a href="/contact">Contact Us</a></p>
+	<p><a href="/about">About Us</a></p>
+</td>
+<td class="mainWindow">
+	<%= yield %>
+</td>
+</tr>
+<tr>
+	<td colspan=2 class="footer">
+	This is a fake website and we do not under any circumstance sell islands.  Although that would be awesome.  If you or anyone else owns an island and would like for us to sell it, we'd be more than happy to in exchange for massive, massive profits.  Or candy.  Guess what?  This is a footer.
+	</td>
+</tr>
+</table>
+
+</body>
+</html>
